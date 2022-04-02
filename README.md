@@ -1,3 +1,7 @@
+# About this fork.
+
+this fork only aim to fix the rest api and the APP_NAME variable. Use "APP_NAME  = linkmeasurement " to run the application on startup. All the credit goes to the author Mao.
+
 # ONOS_Link_Quality_Measurement
 
 An active method to measure link quality: latency(delay) / jitter / packet loss ratio. Performed by ONOS controller.
@@ -16,12 +20,15 @@ Discuss on ONOS mailing list:
 .
 
 ## Demo
+
 ![demo-topo](https://raw.githubusercontent.com/MaoJianwei/ONOS_Link_Quality_Measurement/master/docs/demo-topo.jpg)
 ![link-latency-show](https://raw.githubusercontent.com/MaoJianwei/ONOS_Link_Quality_Measurement/master/docs/link-latency-show.jpg)
+
 ```
 sudo tc qdisc add dev s1-eth2 root netem delay 100ms
 sudo tc qdisc add dev s2-eth3 root netem delay 300ms
 ```
+
 .
 
 ## Latest Instruction to Compile
@@ -30,7 +37,6 @@ sudo tc qdisc add dev s2-eth3 root netem delay 300ms
 2. Modify the **$ONOS_ROOT/tools/build/bazel/modules.bzl** file, refer to **modules.bzl__available_example** file
 3. Build whole ONOS by bazel.
    (You can use my utility script for ONOS: https://github.com/MaoJianwei/SDN_Scripts/blob/master/ONOS/autoONOS_Bazel.sh)
-
 
 **Out-of-date:**
 ONOS does not support to be built and imported to IDE(Intellij IDEA) by Maven(pom.xml) anymore, we should use Bazel(BUILD).
